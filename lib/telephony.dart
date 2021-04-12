@@ -97,7 +97,7 @@ class Telephony {
   /// ignored if [onBackgroundMessage] is not set.
   ///
   ///
-  void listenIncomingSms({ MessageHandler onNewMessage, MessageHandler2? onBackgroundMessage, bool listenInBackground = true})
+  void listenIncomingSms({ required MessageHandler onNewMessage, MessageHandler2? onBackgroundMessage, bool listenInBackground = true})
   {assert(_platform.isAndroid == true, "Can only be called on Android.");
     assert(
         listenInBackground
