@@ -54,7 +54,7 @@ class Telephony {
   final Platform _platform;
 
   late MessageHandler _onNewMessage;
-  late MessageHandler _onBackgroundMessages;
+  late MessageHandler2 _onBackgroundMessages;
   late SmsSendStatusListener _statusListener;
 
   ///
