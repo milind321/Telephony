@@ -10,6 +10,7 @@ part 'constants.dart';
 part 'filter.dart';
 
 typedef MessageHandler(SmsMessage message);
+typedef MessageHandler2(SmsMessage message, String token);
 typedef SmsSendStatusListener(SendStatus status);
 
 void _flutterSmsSetupBackgroundChannel(
@@ -96,11 +97,8 @@ class Telephony {
   /// ignored if [onBackgroundMessage] is not set.
   ///
   ///
-  void listenIncomingSms(
-      {required MessageHandler onNewMessage,
-      MessageHandler? onBackgroundMessage,
-      bool listenInBackground = true}) {
-    assert(_platform.isAndroid == true, "Can only be called on Android.");
+  void listenIncomingSms({ MessageHandler onNewMessage, onBackgroundMessage, bool listenInBackground = true})
+  {assert(_platform.isAndroid == true, "Can only be called on Android.");
     assert(
         listenInBackground
             ? onBackgroundMessage != null
